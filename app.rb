@@ -8,11 +8,12 @@ xStuart = "104"
 xAlex = "105"
 xAdrian = "106"
 xNeil = "107"
+xWendy = "108"
+xBrandon = "109"
 
 respond "/voice" do
   gather = Twilio::Gather.new(:action => "/extension", :numDigits => "3")
-  gather.addSay "Welcome to Magnetic Bear Studios. Please enter 101 for JP, 102 for Robyn, 103 for Mohammad, 104 for Stuart, 106 for Adrian or 107 for Neil."
-  # gather.addPlay "/Welcome.mp3"
+  gather.addSay "Welcome to Magnetic Bear Studios. Please enter 101 for JP, 103 for Mohammad, 104 for Stuart, 106 for Adrian, 108 for Wendy or 109 for Brandon."
   append gather
   addRedirect "/voice"
 end
@@ -21,32 +22,22 @@ respond "/extension" do
   case params[:Digits]
   when xJP
     addSay "Please wait while we connect you to JP"
-    # addPlay "/JP.mp3"
     addDial ENV['JP_PHONE']
-  when xRobyn
-    addSay "Please wait while we connect you to Robyn"
-    # addPlay "/Robyn.mp3"
-    addDial ENV['ROBYN_PHONE']
   when xMohammad
     addSay "Please wait while we connect you to Mohammad"
-    # addPlay "/Mohammad.mp3"
     addDial ENV['MOHAMMAD_PHONE']
   when xStuart
     addSay "Please wait while we connect you to Stuart"
-    # addPlay "/Stuart.mp3"
     addDial ENV['STUART_PHONE']
-  when xAlex
-    addSay "Please wait while we connect you to Alex"
-    # addPlay "/Alex.mp3"
-    addDial ENV['ALEX_PHONE']
   when xAdrian
     addSay "Please wait while we connect you to Adrian"
-    # addPlay "/Adrian.mp3"
     addDial ENV['ADRIAN_PHONE']
-  when xNeil
-    addSay "Please wait while we connect you to Neil"
-    # addPlay "/Neil.mp3"
-    addDial ENV['NEIL_PHONE']
+  when xWendy
+    addSay "Please wait while we connect you to Wendy"
+    addDial ENV['WENDY_PHONE']
+  when xBrandon
+    addSay "Please wait while we connect you to Brandon"
+    addDial ENV['BRANDON_PHONE']
   else
     addSay "The extension you entered is not valid. Please try again."
     addRedirect "/voice"
