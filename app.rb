@@ -20,21 +20,21 @@ respond "/extension" do
   when xJP
     addSay "Please wait while we connect you to JP"
     addDial ENV['JP_PHONE']
+  when xBrandon
+    addSay "Please wait while we connect you to Brandon"
+    addDial ENV['BRANDON_PHONE']
   when xMohammad
     addSay "Please wait while we connect you to Mo"
     addDial ENV['MOHAMMAD_PHONE']
   when xStuart
     addSay "Please wait while we connect you to Stuart"
     addDial ENV['STUART_PHONE']
-  when xAdrian
-    addSay "Please wait while we connect you to Adrian"
-    addDial ENV['ADRIAN_PHONE']
   when xWendy
     addSay "Please wait while we connect you to Wendy"
     addDial ENV['WENDY_PHONE']
-  when xBrandon
-    addSay "Please wait while we connect you to Brandon"
-    addDial ENV['BRANDON_PHONE']
+  when xAdrian
+    addSay "Please wait while we connect you to Adrian"
+    addDial ENV['ADRIAN_PHONE']
   else
     addSay "The extension you entered is not valid. Please try again."
     addRedirect "/voice"
