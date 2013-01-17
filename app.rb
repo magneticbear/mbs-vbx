@@ -20,31 +20,31 @@ respond "/extension" do
   case params[:Digits]
   when xJP
     # addSay "Please wait while we connect you to JP"
-    gather.addPlay "/JP.mp3"
+    addPlay "/JP.mp3"
     addDial ENV['JP_PHONE']
   when xBrandon
     # addSay "Please wait while we connect you to Brandon"
-    gather.addPlay "/Brandon.mp3"
+    addPlay "/Brandon.mp3"
     addDial ENV['BRANDON_PHONE']
   when xMohammad
     # addSay "Please wait while we connect you to Mo"
-    gather.addPlay "/Mo.mp3"
+    addPlay "/Mo.mp3"
     addDial ENV['MOHAMMAD_PHONE']
   when xStuart
     # addSay "Please wait while we connect you to Stuart"
-    gather.addPlay "/Stuart.mp3"
+    addPlay "/Stuart.mp3"
     addDial ENV['STUART_PHONE']
   when xWendy
     # addSay "Please wait while we connect you to Wendy"
-    gather.addPlay "/Wendy.mp3"
+    addPlay "/Wendy.mp3"
     addDial ENV['WENDY_PHONE']
   when xAdrian
     # addSay "Please wait while we connect you to Adrian"
-    gather.addPlay "/Adrian.mp3"
+    addPlay "/Adrian.mp3"
     addDial ENV['ADRIAN_PHONE']
   else
     # addSay "The extension you entered is not valid. Please try again."
-    gather.addPlay "/Error.mp3"
+    addPlay "/Error.mp3"
     addRedirect "/voice"
   end
 end
