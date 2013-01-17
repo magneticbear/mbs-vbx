@@ -2,18 +2,15 @@ require "sinatra"
 require "sinatra/twilio"
 
 xJP = "101"
-xRobyn = "102"
+xBrandon = "102"
 xMohammad = "103"
 xStuart = "104"
-xAlex = "105"
+xWendy = "105"
 xAdrian = "106"
-xNeil = "107"
-xWendy = "108"
-xBrandon = "109"
 
 respond "/voice" do
   gather = Twilio::Gather.new(:action => "/extension", :numDigits => "3")
-  gather.addSay "Welcome to Magnetic Bear Studios. Please enter 101 for JP, 103 for Mohammad, 104 for Stuart, 106 for Adrian, 108 for Wendy or 109 for Brandon."
+  gather.addSay "Welcome to Magnetic Bear Studios. Please enter 101 for JP, 102 for Brandon, 103 for Mohammad, 104 for Stuart, 105 for Wendy, 106 for Adrian."
   append gather
   addRedirect "/voice"
 end
