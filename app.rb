@@ -10,7 +10,7 @@ xAdrian = "106"
 
 respond "/voice" do
   gather = Twilio::Gather.new(:action => "/extension", :numDigits => "3")
-  gather.addSay "Welcome to Magnetic Bear Studios. Please enter 101 for JP, 102 for Brandon, 103 for Mohammad, 104 for Stuart, 105 for Wendy, 106 for Adrian."
+  gather.addSay "Welcome to Magnetic Bear Studios. Please enter 101 for JP, 102 for Brandon, 103 for Mohammad, 104 for Stuart, 105 for Wendy or 106 for Adrian."
   append gather
   addRedirect "/voice"
 end
