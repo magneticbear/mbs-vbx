@@ -7,6 +7,7 @@ xMohammad = "103"
 xStuart = "104"
 xWendy = "105"
 xAdrian = "106"
+XAstley = "333"
 
 respond "/voice" do
   gather = Twilio::Gather.new(:action => "/extension", :numDigits => "3")
@@ -42,6 +43,8 @@ respond "/extension" do
     # addSay "Please wait while we connect you to Adrian"
     addPlay "/Adrian.mp3"
     addDial ENV['ADRIAN_PHONE']
+  when XAstley
+    addPlay "/Astley.mp3"
   else
     # addSay "The extension you entered is not valid. Please try again."
     addPlay "/Error.mp3"
