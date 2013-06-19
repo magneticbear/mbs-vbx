@@ -10,11 +10,12 @@ xAdrian = "106"
 XAstley = "333"
 
 respond "/voice" do
-  gather = Twilio::Gather.new(:action => "/extension", :numDigits => "3")
-  # gather.addSay "Welcome to Magnetic Bear Studios. Please enter 101 for JP, 102 for Brandon, 103 for Mo, 104 for Stuart, 105 for Wendy or 106 for Adrian."
-  gather.addPlay "/Welcome.mp3"
-  append gather
-  addRedirect "/voice"
+  addDial ENV['BRANDON_PHONE']
+  # gather = Twilio::Gather.new(:action => "/extension", :numDigits => "3")
+  # # gather.addSay "Welcome to Magnetic Bear Studios. Please enter 101 for JP, 102 for Brandon, 103 for Mo, 104 for Stuart, 105 for Wendy or 106 for Adrian."
+  # gather.addPlay "/Welcome.mp3"
+  # append gather
+  # addRedirect "/voice"
 end
 
 respond "/extension" do
